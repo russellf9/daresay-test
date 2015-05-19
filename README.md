@@ -2,13 +2,26 @@
 
 For this task, you need to create a responsive employee dashboard.
 
-The first section will be a list/bar of all the employees. Clicking an employee entry in the list will bring up a view of their details, and highlight those in the list they have worked with through a background colour.
+The first section will be a list/bar of all the employees.
+
+Clicking an employee entry in the list will bring up a view of their details, and highlight those in the list they have worked with through a background colour.
 
 Consume the JSON attached, and refer to the mockups provided.
 
 Well formed javascript and graceful transition is more important than look and feel. Use any frameworks you wish.
 
 Email back your code as soon as you complete the task, at the 3 hour mark, email as far as you’ve gotten.
+
+## Mockups
+
+<div>
+ <li>
+    <img src="./design/mobile-layout.png" alt="mobile-layout" width="225">
+  </li>
+  <li>
+    <img src="./design/web-layout.png" alt="web-layout" width="225">
+  </li>
+</div>
 
 ## App
 
@@ -27,6 +40,10 @@ I will style the app using Twitter Bootstrap
 ## Data
 
 I've hacked a bit to use te `data.json`, just moving the file over for now.
+
+## State of the app
+
+I didn't have enough time to complete the test but I'd thought I spend some time getting the view side to look good.
 
 ## TODO
 

@@ -1,4 +1,4 @@
-angular.module('healthyGulpAngularApp')
+angular.module('daresay-app')
 
 .directive('demoComponent', [function() {
         return {

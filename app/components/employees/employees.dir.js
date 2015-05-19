@@ -17,9 +17,9 @@
                 update: '&'
             },
             templateUrl: 'components/employees/employees.html',
-            link: function(scope) {
+            link: function(scope, $state) {
 
-                console.log('employees!');
+                console.log('Directive for employees!');
 
                 // the function get the set of all qualifications
                 EmployeesService.getEmployees().then(function(result) {
@@ -30,10 +30,9 @@
                 });
 
                 // @id the id of the employee page to open
+                // TODO
                 scope.open = function(id) {
-
-                    console.log('open: ', id)
-
+                    //$state.go('employee', {id:id});
                 }
 
             }

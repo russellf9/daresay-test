@@ -1,7 +1,5 @@
-<p>For employees</p>
-
 
 <!--{{employees}}-->
 <div class="employee" ng-repeat="employee in employees">
-   <a ng-click="open(employee.id)">{{employee.name}}</a>
+   <a href="#/employee/" ui-sref="employee({id: employee.id})">{{employee.name}}</a>
 </div>

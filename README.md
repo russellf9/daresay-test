@@ -28,6 +28,8 @@ I will style the app using Twitter Bootstrap
 
 I've hacked a bit to use te `data.json`, just moving the file over for now.
 
+## TODO
+
 * [ ] Style the app
 
-* [ ] Get the build script to copy over the data
+* [ ] Get the build script to copy over the data ( or use NodeJS )

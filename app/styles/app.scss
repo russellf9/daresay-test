@@ -7,6 +7,59 @@
 
 // app specific styles here
 
+// typography
+.body {
+  font-family: $body-font-family;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $header-font-family;
+  font-weight: $header-font-weight;
+  font-style: $header-font-style;
+  line-height: $header-line-height;
+  margin-top: $header-top-margin;
+  margin-bottom: $header-bottom-margin;
+  text-rendering: $header-text-rendering;
+}
+
+h1 {
+  font-size: $h1-font-size;
+}
+
+h2 {
+  font-size: $h2-font-size;
+}
+
+h3 {
+  font-size: $h3-font-size;
+}
+
+h3 {
+  font-size: $h3-font-size;
+}
+
+h4 {
+  font-size: $h4-font-size;
+}
+
+h5 {
+  font-size: $h5-font-size;
+}
+
+h6 {
+  font-size: $h6-font-size;
+}
+
+p {
+  font-family: $paragraph-font-family;
+  font-weight: $paragraph-font-weight;
+  line-height: $paragraph-line-height;
+  margin-top: $paragraph-margin-bottom;
+  margin-bottom: $paragraph-margin-bottom;
+  text-rendering: $paragraph-text-rendering;
+}
+
+
 
 .main-title {
   background-color: $red;

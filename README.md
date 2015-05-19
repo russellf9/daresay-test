@@ -16,15 +16,19 @@ Email back your code as soon as you complete the task, at the 3 hour mark, email
 
 <div>
  <p>Mobile</p>
- <li style="list-style: none;">
-    <img src="./design/mobile-layout.png" alt="mobile-layout" width="500">
-  </li>
+    <ul style="list-style: none;">
+      <li style="list-style: none;">
+        <img src="./design/mobile-layout.png" alt="mobile-layout" width="500">
+      </li>
+    </ul>
 </div>
 <div>
   <p>Web</p>
-  <li style="list-style: none;">
-    <img src="./design/web-layout.png" alt="web-layout" width="500">
-  </li>
+  <ul style="list-style: none;">
+    <li>
+        <img src="./design/web-layout.png" alt="web-layout" width="500">
+    </li>
+  </ul>
 </div>
 
 ## App

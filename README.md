@@ -15,10 +15,11 @@ Email back your code as soon as you complete the task, at the 3 hour mark, email
 ## Mockups
 
 <div>
- <p>Mobile</p>
+ <p><strong>Mobile</strong></p>
  <img src="./design/mobile-layout.png" alt="mobile-layout" width="500">
 </div>
 <div>
+ <p><strong>Web</strong></p>
   <img src="./design/web-layout.png" alt="web-layout" width="500">
 </div>
 

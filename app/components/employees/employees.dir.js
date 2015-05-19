@@ -24,10 +24,17 @@
                 // the function get the set of all qualifications
                 EmployeesService.getEmployees().then(function(result) {
                     console.log('A EmployeesService ---- results: ',result);
-                    scope.employees = result;
+                    scope.employees = result.employees;
                 }, function(error) {
                     console.log('error: ',error);
                 });
+
+                // @id the id of the employee page to open
+                scope.open = function(id) {
+
+                    console.log('open: ', id)
+
+                }
 
             }
         };

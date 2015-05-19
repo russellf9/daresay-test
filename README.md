@@ -18,15 +18,21 @@ I will style the app using Twitter Bootstrap
 
 ## App Structure
 
-- Employees.ctrl • The controller for the employees
+**Employees**
+- employees.dir • The re-usable Directive
+- employees.svc • Responsible for getting the json data ( shared so should move up a folder)
+- employees.html • The rview which contains the list of employees
 
-- Employees.dir • The re-usable Directive
 
-- Employees.svc • Responsible for getting the json data
+**Employee**
+- employee-holder.html • The `tab` for the employee
+- employee.ctrl • The controller for the employee ( required as it passes the `id` to the Directive )
+- employee.dir • The Directive for the individual employee
+- employee.html • The view for the individual employee
 
 ## Data
 
-I've hacked a bit to use te `data.json`, just moving the file over for now.
+I've hacked a bit to use the `data.json`, just moving the file over to the `dist.dir` manually for now.
 
 ## TODO
 

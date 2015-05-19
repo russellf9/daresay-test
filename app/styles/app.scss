@@ -1,2 +1,10 @@
 @import "settings";
 @import "../../bower_components/foundation/scss/foundation";
+
+
+// app specific styles here
+
+
+.main-title {
+  background-color: $red;
+}

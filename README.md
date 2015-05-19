@@ -23,3 +23,7 @@ I will style the app using Twitter Bootstrap
 - Employees.dir • The re-usable Directive
 
 - Employees.svc • Responsible for getting the json data
+
+## Data
+
+I've hacked a bit to use te `data.json`, just moving the file over for now.

@@ -9,7 +9,7 @@ var Q = require('q');
 // == PATH STRINGS ========
 
 var paths = {
-    scripts: 'app/**/*.js',
+    scripts: ['./app/**/app.js', './app/**/*.js', '!app/**/*Spec.js' ],
     styles: ['./app/**/*.css', './app/**/*.scss'],
     images: './images/**/*',
     index: './app/index.html',

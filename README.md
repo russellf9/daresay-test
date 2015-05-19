@@ -27,3 +27,7 @@ I will style the app using Twitter Bootstrap
 ## Data
 
 I've hacked a bit to use te `data.json`, just moving the file over for now.
+
+* [ ] Style the app
+
+* [ ] Get the build script to copy over the data

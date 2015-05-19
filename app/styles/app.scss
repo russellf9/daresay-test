@@ -59,8 +59,50 @@ p {
   text-rendering: $paragraph-text-rendering;
 }
 
+// SHARED LEFT PADDING
+$main-title-padding: 0.25em;
 
+// THE TITLE
+$main-padding-left: 0.75em;
+
+// PADDING FOT THE NAV ITEMs
+$nav-anchor-padding: 0.5em;
 
 .main-title {
   background-color: $red;
+  color: $white;
+  padding-left: $main-padding-left;
+  padding-top: $main-title-padding;
+  padding-bottom: $main-title-padding;
 }
+
+// NAV
+// see 26. Side Nav
+.sidebar-nav {
+  padding: 0; //$side-nav-padding;
+  border: solid 1px $black;
+  margin-left: 1.50em;
+  width: 250px;
+}
+
+// LINKS AND ANCHORS
+li {
+  list-style-type: $side-nav-list-type;
+  position: $side-nav-list-position;
+  margin: 0;
+  font-family: $font-family-sans-serif-nav;
+
+  border: solid 1px $black;
+}
+
+a {
+  line-height: 2.25em;
+  margin-left: 0.5em;
+  font-size: $list-font-size;
+  color: $jet;
+}
+
+a:hover, a:focus {
+  color: $jet; }
+a img {
+  border: none; }

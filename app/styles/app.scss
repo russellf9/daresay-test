@@ -7,9 +7,11 @@
 
 // app specific styles here
 
+// - - - - - - - - - - - - - - - - - - - - - - - - -
 // typography
 .body {
   font-family: $body-font-family;
+  color: $primary-color-text;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -56,6 +58,7 @@ h6 {
 p {
   font-family: $paragraph-font-family;
   font-weight: $paragraph-font-weight;
+  font-size: $paragraph-font-size;
   line-height: $paragraph-line-height;
   margin-top: $paragraph-margin-bottom;
   margin-bottom: $paragraph-margin-bottom;
@@ -65,13 +68,14 @@ p {
 // SHARED LEFT PADDING
 $main-title-padding: 0.25em;
 
+// SHARED MARGIN
+$employee-element-padding: 1.50em;
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
 // THE TITLE
 $main-padding-left: 0.75em;
 
-// PADDING FOT THE NAV ITEMs
-$nav-anchor-padding: 0.5em;
-$nav-margin: 1.50em;
-$nav-width: 250px;
 
 .main-title {
   background-color: $red;
@@ -81,16 +85,23 @@ $nav-width: 250px;
   padding-bottom: $main-title-padding;
 }
 
-// NAV
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// NAVIGATION
 // see 26. Side Nav
+$nav-anchor-padding: 0.5em;
+$nav-margin: 1.50em;
+$nav-width: 250px;
+
 .sidebar-nav {
   padding: 0; //$side-nav-padding;
+  margin-top: $employee-element-padding;
   border: solid 1px $black;
   margin-left: $nav-margin;
   width: $nav-width;
   float: left;
 }
 
+// - - - - - - - - - - - - - - - - - - - - - - - - -
 // LINKS AND ANCHORS
 li {
   list-style-type: $side-nav-list-type;
@@ -115,28 +126,54 @@ a:hover, a:focus {
 a img {
   border: none; }
 
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
 //EMPLOYEE
 
-$employee-padding: 15px;
+// declare some shared variables first
+$employee-padding: 2.0em;//1.50em;
 
-$employee-margin: 15px;
+$employee-margin: 1.75em;
+$image-dimension: 188px;
 
 .employee {
   float: right;
+  padding: $employee-padding;
 
-  padding-left: $employee-padding;
-  padding-right: $employee-padding;
-  padding-bottom: $employee-padding;
+  margin-top: $employee-element-padding;
   margin-left: $employee-margin;
   margin-right: $employee-margin;
 
-  border: solid 2px $green;
+//  border: solid 2px $green;
   background-color: $lightGrey;
   width: calc(100% - (#{$nav-margin} + #{$nav-width}) - #{$employee-margin} * 2);
-  //height: 300px;
 
   border-radius: 10px;
 }
+.employee-name {
+  float: left;
+  margin-left: $employee-margin;
+  width: calc(100% - (#{$image-dimension} + #{$employee-margin}));
+  max-width: 400px;
+}
 
+.employee-name h2{
+  font-size: calc( #{$h2-font-size} * 2);
+  line-height: calc( #{$h2-font-size} * 2);
+//  border: 1px solid $red;
+  padding: 0;
+}
+
+
+.employee-image {
+  float: left;
+  width: $image-dimension;
+  height: $image-dimension;
+
+}
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// general styles
 div.inline { float:left; }
+
 .clearBoth { clear:both; }

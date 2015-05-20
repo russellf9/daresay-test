@@ -24,10 +24,13 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: $h1-font-size;
+  font-family: $header-font-family;
 }
 
 h2 {
   font-size: $h2-font-size;
+  font-family: $body-font-family;
+  font-weight: $body-font-weight;
 }
 
 h3 {
@@ -67,6 +70,8 @@ $main-padding-left: 0.75em;
 
 // PADDING FOT THE NAV ITEMs
 $nav-anchor-padding: 0.5em;
+$nav-margin: 1.50em;
+$nav-width: 250px;
 
 .main-title {
   background-color: $red;
@@ -81,8 +86,9 @@ $nav-anchor-padding: 0.5em;
 .sidebar-nav {
   padding: 0; //$side-nav-padding;
   border: solid 1px $black;
-  margin-left: 1.50em;
-  width: 250px;
+  margin-left: $nav-margin;
+  width: $nav-width;
+  float: left;
 }
 
 // LINKS AND ANCHORS
@@ -103,6 +109,34 @@ a {
 }
 
 a:hover, a:focus {
-  color: $jet; }
+  color: $jet;
+  text-decoration: none;
+}
 a img {
   border: none; }
+
+//EMPLOYEE
+
+$employee-padding: 15px;
+
+$employee-margin: 15px;
+
+.employee {
+  float: right;
+
+  padding-left: $employee-padding;
+  padding-right: $employee-padding;
+  padding-bottom: $employee-padding;
+  margin-left: $employee-margin;
+  margin-right: $employee-margin;
+
+  border: solid 2px $green;
+  background-color: $lightGrey;
+  width: calc(100% - (#{$nav-margin} + #{$nav-width}) - #{$employee-margin} * 2);
+  //height: 300px;
+
+  border-radius: 10px;
+}
+
+div.inline { float:left; }
+.clearBoth { clear:both; }

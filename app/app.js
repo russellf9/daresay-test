@@ -10,14 +10,16 @@ angular.module('daresay-app', ['ui.router', 'daresay-app.data', 'daresay-app.nav
 
             .state('home', {
                 url: '/',
-                templateUrl: 'components/employee/employee-holder.html',
+                templateUrl: 'components/home.html',
                 controller: 'EmployeeController'
 
             }).
             state('employee', {
                 url: '/employee:id',
-                templateUrl: 'components/employee/employee-holder.html',
+                templateUrl: 'components/home.html',
                 controller: 'EmployeeController'
             });
+
+        $urlRouterProvider.otherwise('/');
 
     }]);

@@ -45,7 +45,7 @@
 
                     this.getEmployees().then(function(result) {
                         _employees.employees = result.employees;
-                        deferred.resolve(findEmployee(id));
+                        deferred.resolve(_findEmployee(id));
                     }, function(error) {
                         deferred.reject("Error: no data as yet ", error);
                     });

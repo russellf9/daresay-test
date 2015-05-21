@@ -31,21 +31,23 @@ I will style the app using Twitter Bootstrap
 
 ## App Structure
 
-**Employees**
-- employees.dir • The re-usable Directive
+(I've adjusted the structure somewhat)
+
+**Navigation**
+- navigation.dir • Implements the navigation view
 - employees.svc • Responsible for getting the json data ( shared so should move up a folder)
-- employees.html • The rview which contains the list of employees
+- employees.html • The view which contains the list of employees
 
 
 **Employee**
-- employee-holder.html • The `tab` for the employee
 - employee.ctrl • The controller for the employee ( required as it passes the `id` to the Directive )
+- employee-holder.html • The `tab` for the employee ( could replace with the `home.html` )
 - employee.dir • The Directive for the individual employee
 - employee.html • The view for the individual employee
 
 ## Data
 
-I've hacked a bit to use the `data.json`, just moving the file over to the `dist.dir` manually for now.
+~~I've hacked a bit to use the `data.json`, just moving the file over to the `dist.dir` manually for now.~~
 
 ## State of the app
 
@@ -55,4 +57,6 @@ I didn't have enough time to complete the test but I'd thought I spend some time
 
 * [ ] Style the app
 
-* [ ] Get the build script to copy over the data ( or use NodeJS )
+* [ ] Style the app for Mobile
+
+* [x] Get the build script to copy over the data

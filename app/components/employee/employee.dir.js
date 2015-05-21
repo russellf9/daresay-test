@@ -18,14 +18,13 @@
                 id: '='
             },
             templateUrl: 'components/employee/employee.html',
-            link: function(scope, $state) {
+            link: function(scope) {
                 // the function get the set of all qualifications
                 EmployeesService.getEmployee(scope.id).then(function(result) {
                     scope.employee = result;
                 }, function(error) {
-                    console.log('error: ',error);
+                    console.log('Employee::link - error: ',error);
                 });
-
             }
         };
     }

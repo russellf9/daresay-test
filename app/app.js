@@ -10,7 +10,8 @@ angular.module('daresay-app', ['ui.router', 'daresay-app.data', 'daresay-app.emp
 
             .state('home', {
                 url: '/',
-                templateUrl: 'components/home.html'
+                templateUrl: 'components/employee/employee-holder.html',
+                controller: 'EmployeeController'
 
             }).
             state('employee', {

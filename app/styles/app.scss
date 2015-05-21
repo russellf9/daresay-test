@@ -135,6 +135,7 @@ $employee-padding: 2.0em;//1.50em;
 
 $employee-margin: 1.75em;
 $image-dimension: 280px;
+$employee-max-width: 400px;
 
 .employee {
   float: left;
@@ -155,7 +156,7 @@ $image-dimension: 280px;
   float: left;
   margin-left: $employee-margin;
   width: calc(100% - (#{$image-dimension} + #{$employee-margin}));
-  max-width: 400px; // used to break the text
+  max-width: $employee-max-width; // used to break the text
 }
 
 

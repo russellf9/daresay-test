@@ -24,8 +24,7 @@
 
                 var deferred = $q.defer();
 
-                if (_employees) {
-                    // TODO handle error here...
+                var findEmployee = function() {
                     var employee = {};
 
                     angular.forEach(_employees.employees, function(value, key) {
@@ -33,12 +32,22 @@
                             employee = value;
                         }
                     });
-                    deferred.resolve(employee);
+                    return employee;
+                };
+
+                if (_employees) {
+                    // TODO handle error here...
+                    deferred.resolve(findEmployee(id));
 
                     return deferred.promise;
                 } else {
-                    // else- not in cache
-                    deferred.reject("Error: no data as yet ");
+
+                    this.getEmployees().then(function(result) {
+                        _employees.employees = result.employees;
+                        deferred.resolve(findEmployee(id));
+                    }, function(error) {
+                        deferred.reject("Error: no data as yet ", error);
+                    });
                 }
 
                 return deferred.promise;

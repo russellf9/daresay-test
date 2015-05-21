@@ -134,10 +134,10 @@ a img {
 $employee-padding: 2.0em;//1.50em;
 
 $employee-margin: 1.75em;
-$image-dimension: 188px;
+$image-dimension: 280px;
 
 .employee {
-  float: right;
+  float: left;
   padding: $employee-padding;
 
   margin-top: $employee-element-padding;
@@ -147,6 +147,7 @@ $image-dimension: 188px;
 //  border: solid 2px $green;
   background-color: $lightGrey;
   width: calc(100% - (#{$nav-margin} + #{$nav-width}) - #{$employee-margin} * 2);
+  max-width: 1000px;
 
   border-radius: 10px;
 }
@@ -154,12 +155,17 @@ $image-dimension: 188px;
   float: left;
   margin-left: $employee-margin;
   width: calc(100% - (#{$image-dimension} + #{$employee-margin}));
-  max-width: 400px;
+  max-width: 400px; // used to break the text
 }
 
+
+$employee-name-ratio: 2.60;
+$employee-line-height-ratio: calc(#{$employee-name-ratio} * 0.25);
+
 .employee-name h2{
-  font-size: calc( #{$h2-font-size} * 2);
-  line-height: calc( #{$h2-font-size} * 2);
+  margin-top: -0.25em;
+  font-size: calc( #{$h2-font-size} * #{$employee-name-ratio});
+  line-height: calc( #{$h2-font-size} * #{$employee-line-height-ratio});
 //  border: 1px solid $red;
   padding: 0;
 }

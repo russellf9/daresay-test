@@ -14,10 +14,11 @@
         return {
             restrict: 'EA',
             scope: {
-                update: '&'
+                update: '&',
+                id: '='
             },
             templateUrl: 'components/navigation/navigation.html',
-            link: function(scope, $state) {
+            link: function(scope) {
 
                 // the function get the set of all qualifications
                 EmployeesService.getEmployees().then(function(result) {
@@ -30,6 +31,16 @@
                 // TODO
                 scope.open = function(id) {
                     //$state.go('employee', {id:id});
+                };
+
+                // returns true if the supplied `id` matches the current id of the current active employee
+                scope.isActive = function(id) {
+                    return Number(scope.id) === Number(id);
+                };
+
+                // returns true if the employee with the supplied `id` has worked with the current active employee
+                scope.isMember= function(id) {
+                    return EmployeesService.isMember(id, scope.id);
                 }
 
             }

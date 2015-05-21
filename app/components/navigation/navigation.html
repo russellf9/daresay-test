@@ -1,5 +1,5 @@
 <ul class="sidebar-nav">
-    <li class="sidebar-brand" ng-repeat="employee in employees">
+    <li class="sidebar-brand" ng-repeat="employee in employees" ng-class="{active: isActive(employee.id), member: isMember(employee.id)}">
         <a href="#/employee/" ui-sref="employee({id: employee.id})">{{employee.name}}</a>
     </li>
 </ul>

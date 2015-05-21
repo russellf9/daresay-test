@@ -113,14 +113,30 @@ li {
 }
 
 a {
+  display: block;
   line-height: 2.25em;
-  margin-left: 0.5em;
+  padding-left: 0.5em;
   font-size: $list-font-size;
   color: $jet;
+  width: 100%;
+}
+
+/* selected link */
+
+.active {
+  background-color: $jet;
+  a {
+    color: $white;
+  }
+}
+
+// for a employee who is a former colleague
+.member {
+  background-color: $accent-color;
 }
 
 a:hover, a:focus {
-  color: $jet;
+  color: $red; //$accent-color;
   text-decoration: none;
 }
 a img {

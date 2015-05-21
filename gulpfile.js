@@ -9,15 +9,18 @@ var Q = require('q');
 // == PATH STRINGS ========
 
 var paths = {
-    scripts: ['./app/**/app.js', './app/**/*.js', '!app/**/*Spec.js' ],
+    scripts: ['./app/**/app.js', './app/**/*.js', '!app/**/*Spec.js'],
     styles: ['./app/**/*.css', './app/**/*.scss'],
     images: './images/**/*',
+    data: './data/data.json',
     index: './app/index.html',
     partials: ['app/**/*.html', '!app/index.html'],
     distDev: './dist.dev',
     distProd: './dist.prod',
     distScriptsProd: './dist.prod/scripts',
-    scriptsDevServer: 'devServer/**/*.js'
+    scriptsDevServer: 'devServer/**/*.js',
+    distDevData: './dist.dev',
+    distProdData: './dist.prod'
 };
 
 // == PIPE SEGMENTS ========
@@ -33,7 +36,7 @@ pipes.orderedAppScripts = function() {
 };
 
 pipes.minifiedFileName = function() {
-    return plugins.rename(function (path) {
+    return plugins.rename(function(path) {
         path.extname = '.min' + path.extname;
     });
 };
@@ -56,8 +59,8 @@ pipes.builtAppScriptsProd = function() {
     return es.merge(scriptedPartials, validatedAppScripts)
         .pipe(pipes.orderedAppScripts())
         .pipe(plugins.sourcemaps.init())
-            .pipe(plugins.concat('app.min.js'))
-            .pipe(plugins.uglify())
+        .pipe(plugins.concat('app.min.js'))
+        .pipe(plugins.uglify())
         .pipe(plugins.sourcemaps.write())
         .pipe(gulp.dest(paths.distScriptsProd));
 };
@@ -110,8 +113,8 @@ pipes.builtStylesDev = function() {
 pipes.builtStylesProd = function() {
     return gulp.src(paths.styles)
         .pipe(plugins.sourcemaps.init())
-            .pipe(plugins.sass())
-            .pipe(plugins.minifyCss())
+        .pipe(plugins.sass())
+        .pipe(plugins.minifyCss())
         .pipe(plugins.sourcemaps.write())
         .pipe(pipes.minifiedFileName())
         .pipe(gulp.dest(paths.distProd));
@@ -172,6 +175,15 @@ pipes.builtAppDev = function() {
 
 pipes.builtAppProd = function() {
     return es.merge(pipes.builtIndexProd(), pipes.processedImagesProd());
+};
+
+pipes.distDataDev = function() {
+    return gulp.src(paths.data)
+        .pipe(gulp.dest(paths.distDevData));
+};
+pipes.distDataProd = function() {
+    return gulp.src(paths.data)
+        .pipe(gulp.dest(paths.distProdData));
 };
 
 // == TASKS ========
@@ -239,6 +251,12 @@ gulp.task('build-index-prod', pipes.builtIndexProd);
 // builds a complete dev environment
 gulp.task('build-app-dev', pipes.builtAppDev);
 
+// simply copies the data to the dev environment
+gulp.task('build-data-dev', pipes.distDataDev);
+
+// simply copies the data to the prod environment
+gulp.task('build-data-prod', pipes.distDataProd);
+
 // builds a complete prod environment
 gulp.task('build-app-prod', pipes.builtAppProd);
 
@@ -249,17 +267,17 @@ gulp.task('clean-build-app-dev', ['clean-dev'], pipes.builtAppDev);
 gulp.task('clean-build-app-prod', ['clean-prod'], pipes.builtAppProd);
 
 // clean, build, and watch live changes to the dev environment
-gulp.task('watch-dev', ['clean-build-app-dev', 'validate-devserver-scripts'], function() {
+gulp.task('watch-dev', ['clean-build-app-dev', 'validate-devserver-scripts', 'build-data-dev'], function() {
 
     // start nodemon to auto-reload the dev server
-    plugins.nodemon({ script: 'server.js', ext: 'js', watch: ['devServer/'], env: {NODE_ENV : 'development'} })
+    plugins.nodemon({script: 'server.js', ext: 'js', watch: ['devServer/'], env: {NODE_ENV: 'development'}})
         .on('change', ['validate-devserver-scripts'])
-        .on('restart', function () {
+        .on('restart', function() {
             console.log('[nodemon] restarted dev server');
         });
 
     // start live-reload server
-    plugins.livereload.listen({ start: true });
+    plugins.livereload.listen({start: true});
 
     // watch index
     gulp.watch(paths.index, function() {
@@ -291,9 +309,9 @@ gulp.task('watch-dev', ['clean-build-app-dev', 'validate-devserver-scripts'], fu
 gulp.task('watch-prod', ['clean-build-app-prod', 'validate-devserver-scripts'], function() {
 
     // start nodemon to auto-reload the dev server
-    plugins.nodemon({ script: 'server.js', ext: 'js', watch: ['devServer/'], env: {NODE_ENV : 'production'} })
+    plugins.nodemon({script: 'server.js', ext: 'js', watch: ['devServer/'], env: {NODE_ENV: 'production'}})
         .on('change', ['validate-devserver-scripts'])
-        .on('restart', function () {
+        .on('restart', function() {
             console.log('[nodemon] restarted dev server');
         });
 

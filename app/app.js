@@ -1,4 +1,4 @@
-angular.module('daresay-app', ['ui.router', 'daresay-app.data', 'daresay-app.employees',
+angular.module('daresay-app', ['ui.router', 'daresay-app.data', 'daresay-app.navigation',
     'daresay-app.employee', 'daresay-app.employeedirective' ])
 
 .config(['$stateProvider', '$urlRouterProvider',

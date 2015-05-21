@@ -1,25 +1,23 @@
 (function() {
-    angular.module('daresay-app.employees', [])
-        .directive('employees', Employees);
+    angular.module('daresay-app.navigation', [])
+        .directive('navigation', Navigation);
 
     /**
-     * The <Employees> directive is responsible for:
-     * - displaying the Employees
+     * The <Navigation> directive is responsible for:
+     * - displaying the Navigation
      * - informing when the data has been loaded or updated (perhaps)
      * - informing when there has been an error when attempting to load the data - TODO
      */
 
-    function Employees(EmployeesService) {
+    function Navigation(EmployeesService) {
 
         return {
             restrict: 'EA',
             scope: {
                 update: '&'
             },
-            templateUrl: 'components/employees/employees.html',
+            templateUrl: 'components/navigation/navigation.html',
             link: function(scope, $state) {
-
-                console.log('Directive for employees!');
 
                 // the function get the set of all qualifications
                 EmployeesService.getEmployees().then(function(result) {

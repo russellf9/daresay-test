@@ -60,7 +60,7 @@
                     return false;
                 }
                 var employee = _findEmployee(activeId);
-                return employee.worked_with.indexOf(employeeId) >= 0;
+                return (employee && employee.worked_with    ) ? (employee.worked_with.indexOf(employeeId) >= 0) : false;
             }
         };
     }

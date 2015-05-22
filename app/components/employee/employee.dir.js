@@ -25,6 +25,10 @@
                 }, function(error) {
                     console.log('Employee::link - error: ',error);
                 });
+
+                scope.hasValue = function() {
+                    return !angular.equals({},scope.employee);
+                }
             }
         };
     }

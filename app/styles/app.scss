@@ -153,7 +153,7 @@ $employee-padding: 2.0em;//1.50em;
 
 $employee-margin: 1.75em;
 $image-dimension: 280px;
-$employee-max-width: 400px;
+$employee-max-width: 300px;
 
 .employee {
   float: left;
@@ -166,6 +166,7 @@ $employee-max-width: 400px;
 //  border: solid 2px $green;
   background-color: $lightGrey;
   width: calc(100% - (#{$nav-margin} + #{$nav-width}) - #{$employee-margin} * 2);
+  min-width: calc(#{$image-dimension} + #{$employee-max-width} ); //+ #{$employee-padding} * 2
   max-width: 1000px;
 
   border-radius: 10px;

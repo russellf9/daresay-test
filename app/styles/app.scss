@@ -4,7 +4,6 @@
 @import "colors";
 @import "palette";
 
-
 // app specific styles here
 
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -68,16 +67,15 @@ p {
 }
 
 // SHARED LEFT PADDING
-$main-title-padding: 0; //0.25em;
+$main-title-padding: 0;
+//0.25em;
 
 // SHARED MARGIN
 $employee-element-padding: 1.50em;
 
-
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 // THE TITLE
 $main-padding-left: 0.75em;
-
 
 .main-title {
   background-color: $red;
@@ -102,42 +100,54 @@ $nav-width: 250px;
   width: $nav-width;
   float: left;
 }
+
 .mobile-nav {
-  //align-self: flex-end;
+  margin: 0;
 }
 
 .mobile-nav-holder {
   align-self: flex-end;
 }
 
-
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 // LINKS AND ANCHORS
-li {
-  list-style-type: $side-nav-list-type;
-  position: $side-nav-list-position;
-  margin: 0;
-  font-family: $font-family-sans-serif-nav;
 
-  border: solid 1px $black;
-}
+.sidebar-nav {
+  li {
+    list-style-type: $side-nav-list-type;
+    position: $side-nav-list-position;
+    margin: 0;
+    font-family: $font-family-sans-serif-nav;
 
-a {
-  display: block;
-  line-height: 2.25em;
-  padding-left: 0.5em;
-  font-size: $list-font-size;
-  color: $jet;
-  width: 100%;
-}
-
-/* selected link */
-
-.active {
-  background-color: $jet;
-  a {
-    color: $white;
+    border: solid 1px $black;
   }
+
+  a {
+    display: block;
+    line-height: 2.25em;
+    padding-left: 0.5em;
+    font-size: $list-font-size;
+    color: $jet;
+    width: 100%;
+  }
+
+  /* selected link */
+
+  .active {
+    background-color: $jet;
+    a {
+      color: $white;
+    }
+  }
+}
+
+$mobile-li-item-dimension: calc(100vw / 6);
+.mobile-li-item {
+  display: inline-block;
+  width: $mobile-li-item-dimension;
+  height: $mobile-li-item-dimension;
+
+  background-color: #007069;
 }
 
 // for a employee who is a former colleague
@@ -149,15 +159,18 @@ a:hover, a:focus {
   color: $red; //$accent-color;
   text-decoration: none;
 }
+
 a img {
-  border: none; }
+  border: none;
+}
 
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 //EMPLOYEE
 
 // declare some shared variables first
-$employee-padding: 2.0em;//1.50em;
+$employee-padding: 2.0em;
+//1.50em;
 
 $employee-margin: 1.75em;
 $image-dimension: 280px;
@@ -171,10 +184,10 @@ $employee-max-width: 300px;
   margin-left: $employee-margin;
   margin-right: $employee-margin;
 
-//  border: solid 2px $green;
+  //  border: solid 2px $green;
   background-color: $lightGrey;
   width: calc(100% - (#{$nav-margin} + #{$nav-width}) - #{$employee-margin} * 2);
-  min-width: calc(#{$image-dimension} + #{$employee-max-width} ); //+ #{$employee-padding} * 2
+  min-width: calc(#{$image-dimension} + #{$employee-max-width}); //+ #{$employee-padding} * 2
   max-width: 1000px;
 
   border-radius: 10px;
@@ -184,7 +197,10 @@ $employee-max-width: 300px;
   background-color: $lightGrey;
   margin: 0;
 
+  border: solid 1px black;
+
 }
+
 .employee-name {
   float: left;
   margin-left: $employee-margin;
@@ -197,16 +213,14 @@ $employee-max-width: 300px;
   padding: $employee-padding;
 }
 
-
-
 $employee-name-ratio: 2.60;
 $employee-line-height-ratio: calc(#{$employee-name-ratio} * 0.25);
 
-.employee-name h2{
+.employee-name h2 {
   margin-top: -0.25em;
-  font-size: calc( #{$h2-font-size} * #{$employee-name-ratio});
-  line-height: calc( #{$h2-font-size} * #{$employee-line-height-ratio});
-//  border: 1px solid $red;
+  font-size: calc(#{$h2-font-size} * #{$employee-name-ratio});
+  line-height: calc(#{$h2-font-size} * #{$employee-line-height-ratio});
+  //  border: 1px solid $red;
   padding: 0;
 }
 
@@ -215,32 +229,56 @@ $employee-line-height-ratio: calc(#{$employee-name-ratio} * 0.25);
   padding-right: $employee-padding;
 }
 
-.employee-name-mobile h2{
-  font-size: calc( #{$h2-font-size} * #{$employee-name-ratio});
-  line-height: calc( #{$h2-font-size} * #{$employee-line-height-ratio});
+.employee-name-mobile h2 {
+  font-size: calc(#{$h2-font-size} * #{$employee-name-ratio});
+  line-height: calc(#{$h2-font-size} * #{$employee-line-height-ratio});
   word-spacing: 9999999px;
   //  border: 1px solid $red;
 }
 
-
 .employee-image {
-   float: left;
-   width: $image-dimension;
-   height: $image-dimension;
-
- }
-
-.employee-image-mobile {
+  float: left;
   width: $image-dimension;
   height: $image-dimension;
 
 }
+
+
+
+
+.employee-image-container {
+  //  border: 1px solid $red;
+  padding-top: $employee-padding;
+}
+
+.mobile-img-container {
+//  border: solid 1px blue;
+  width: $mobile-li-item-dimension;
+  height: $mobile-li-item-dimension;
+}
+
+// TODO use another function with the number of items
+$mobile-image-dimension: calc(100vw / (8));
+
+.employee-image-mobile {
+  width: $mobile-image-dimension;
+  height: $mobile-image-dimension;
+  margin: auto;
+  vertical-align: middle;
+  display: inline-block;
+}
+
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // general styles
-div.inline { float:left; }
+div.inline {
+  float: left;
+}
 
-.clearBoth { clear:both; }
+.clearBoth {
+  clear: both;
+}
+
 .flex {
   display: flex;
 }

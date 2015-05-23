@@ -1,5 +1,7 @@
 <ul class="mobile-nav" ng-cloak>
-    <li class="sidebar-brand" ng-repeat="employee in employees" ng-class="{active: isActive(employee.id), member: isMember(employee.id)}">
-        <a href="#/employee/" ui-sref="employee({id: employee.id})">{{employee.name}}</a>
+    <li class="mobile-li-item" ng-repeat="employee in employees" ng-class="{active: isActive(employee.id), member: isMember(employee.id)}">
+        <div href="#/employee/" class="mobile-img-container text-center flex">
+            <img src="{{employee.picture_url}}" ui-sref="employee({id: employee.id})" class="img-circle employee-image-mobile">
+        </div>
     </li>
 </ul>

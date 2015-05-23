@@ -1,5 +1,5 @@
 angular.module('daresay-app', ['ui.router', 'daresay-app.data', 'daresay-app.navigation',
-    'daresay-app.employee', 'daresay-app.employeedirective' ])
+    'daresay-app.employee', 'daresay-app.employeedirective', 'daresay-app.navigator' ])
 
 .config(['$stateProvider', '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {

@@ -9,7 +9,19 @@
      * - informing when there has been an error when attempting to load the data - TODO
      */
 
-    function Employee(EmployeesService) {
+    function _resolveTemplate(NavigatorService, tElement, tAttrs) {
+
+        var isMobile = NavigatorService.isDesktop(); // swap around for testing
+
+      //  console.log('B Employee::isMobile: ', isMobile);
+        if(isMobile) {
+            return 'components/employee/employee-mobile.html'
+        } else {
+            return 'components/employee/employee.html'
+        }
+    }
+
+    function Employee(EmployeesService, NavigatorService) {
 
         return {
             restrict: 'EA',
@@ -17,7 +29,7 @@
                 update: '&',
                 id: '='
             },
-            templateUrl: 'components/employee/employee.html',
+            templateUrl: _resolveTemplate(NavigatorService),
             link: function(scope) {
                 // the function get the set of all qualifications
                 EmployeesService.getEmployee(scope.id).then(function(result) {

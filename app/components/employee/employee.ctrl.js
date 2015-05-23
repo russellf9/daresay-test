@@ -4,7 +4,7 @@
         .controller('EmployeeController', Employee);
 
 
-    function Employee($scope, $state, $stateParams) {
+    function Employee($scope, $state, $stateParams, NavigatorService) {
 
         console.log('Employee Ctrl!');
 
@@ -22,6 +22,10 @@
         $scope.onReceived = function() {
             console.log('onReceived!');
         };
+
+        $scope.isDesktop = NavigatorService.isDesktop();
+
+        $scope.isMobile = NavigatorService.isMobile();
 
 
     }

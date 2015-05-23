@@ -102,6 +102,14 @@ $nav-width: 250px;
   width: $nav-width;
   float: left;
 }
+.mobile-nav {
+  //align-self: flex-end;
+}
+
+.mobile-nav-holder {
+  align-self: flex-end;
+}
+
 
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 // LINKS AND ANCHORS
@@ -171,12 +179,24 @@ $employee-max-width: 300px;
 
   border-radius: 10px;
 }
+
+.employee-mobile {
+  background-color: $lightGrey;
+  margin: 0;
+
+}
 .employee-name {
   float: left;
   margin-left: $employee-margin;
   width: calc(100% - (#{$image-dimension} + #{$employee-margin}));
   max-width: $employee-max-width; // used to break the text
 }
+
+.employee-name-mobile {
+  width: 100%;
+  padding: $employee-padding;
+}
+
 
 
 $employee-name-ratio: 2.60;
@@ -190,9 +210,27 @@ $employee-line-height-ratio: calc(#{$employee-name-ratio} * 0.25);
   padding: 0;
 }
 
+.employee-bio-mobile {
+  padding-left: $employee-padding;
+  padding-right: $employee-padding;
+}
+
+.employee-name-mobile h2{
+  font-size: calc( #{$h2-font-size} * #{$employee-name-ratio});
+  line-height: calc( #{$h2-font-size} * #{$employee-line-height-ratio});
+  word-spacing: 9999999px;
+  //  border: 1px solid $red;
+}
+
 
 .employee-image {
-  float: left;
+   float: left;
+   width: $image-dimension;
+   height: $image-dimension;
+
+ }
+
+.employee-image-mobile {
   width: $image-dimension;
   height: $image-dimension;
 
@@ -203,3 +241,6 @@ $employee-line-height-ratio: calc(#{$employee-name-ratio} * 0.25);
 div.inline { float:left; }
 
 .clearBoth { clear:both; }
+.flex {
+  display: flex;
+}

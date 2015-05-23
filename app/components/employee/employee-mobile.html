@@ -1,11 +1,12 @@
 <div class="employee-mobile" ng-if="hasValue()">
-    <img src="{{employee.picture_url}}" class="img-circle employee-image">
+    <div class="text-center">
+        <img src="{{employee.picture_url}}" class="img-circle employee-image-mobile">
+    </div>
 
-    <div class="employee-name">
+    <div class="text-center employee-name-mobile">
         <h2>{{employee.name}}</h2>
     </div>
-    <div class="clearBoth"></div>
-    <div class="employee-bio">
+    <div class="employee-bio-mobile">
         <p>{{employee.bio}}</p>
     </div>
 </div>

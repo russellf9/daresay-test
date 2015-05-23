@@ -1,5 +1,7 @@
-<h1 class="main-title">MAFIA INC</h1>
-
-<div navigation data-id="id"></div>
-<employee data-id="id"></employee>
-<div class="clearBoth"></div>
+<div class="">
+    <h1 ng-if="isDesktop" class="main-title">MAFIA INC</h1>
+    <div ng-if="isDesktop" navigation data-id="id"></div>
+    <employee data-id="id"></employee>
+    <div ng-if="isMobile" navigation data-id="id"></div>
+    <div ng-if="isDesktop" class="clearBoth"></div>
+</div>

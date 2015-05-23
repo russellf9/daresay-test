@@ -11,9 +11,8 @@
 
     function _resolveTemplate(NavigatorService, tElement, tAttrs) {
 
-        var isMobile = NavigatorService.isDesktop(); // swap around for testing
+        var isMobile = NavigatorService.isMobile(); // using the chrome mobile switch for testing
 
-      //  console.log('B Employee::isMobile: ', isMobile);
         if(isMobile) {
             return 'components/employee/employee-mobile.html'
         } else {

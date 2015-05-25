@@ -5,22 +5,18 @@
 
     'use strict';
 
-
     angular.module('daresay-app.navigator', []).service('NavigatorService', function($window) {
 
             // will match all the current types of mobile device
             var regExp = /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i;
 
             return {
-
                 isMobile: function() {
                     return Boolean($window.navigator.userAgent.match(regExp));
                 },
-
                 isDesktop: function() {
-                    return !Boolean(navigator.userAgent.match(regExp));
+                    return !Boolean($window.navigator.userAgent.match(regExp));
                 }
-
             };
         }
     );
